@@ -1,11 +1,14 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView, SafeAreaView } from 'react-native'
 import React from 'react'
+import AddEmployee from '@/components/AddEmployee'
 
 const explore = () => {
   return (
-    <View>
-      <Text>explore</Text>
-    </View>
+    <ScrollView>
+      <SafeAreaView>
+        <AddEmployee/>
+      </SafeAreaView>
+    </ScrollView>
   )
 }
 

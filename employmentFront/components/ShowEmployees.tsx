@@ -31,16 +31,16 @@ const ShowEmployees = () => {
         }
     }
   return (
-    <View style={{padding: 10, backgroundColor: '#add8e6'}}>
+    <View style={{padding: 10,paddingTop: 35, backgroundColor: '#add8e6'}}>
       
       <Text style={{fontSize: 24, fontWeight: 'bold', marginBottom: 10,}}>Employees:</Text>
-      
       {employes.map((employee: employed,index : number) =>(
-       <View key={index} style={{ marginBottom: 10 }}>
+       <View key={index} style={styles.box}>
          <Text>Id: {employee.id}</Text>
          <Text>Birthday: {employee.birth_date}</Text>
          <Text>First Name: {employee.first_name}</Text>
          <Text>Last Name: {employee.last_name}</Text>
+         <Text>Position: {employee.position}</Text>
          <Text>Gender: {employee.gender}</Text>
          <Text>Hire Date: {employee.hire_date}</Text>
        </View>
@@ -49,5 +49,20 @@ const ShowEmployees = () => {
     </View>
   )
 }
+const styles = StyleSheet.create({
+  box: {
+    backgroundColor: '#fff', // White background for the box
+    borderRadius: 5, // Rounded corners
+    padding: 10, // Padding inside the box
+    marginBottom: 10, // Margin below the box
+    borderWidth: 1, // Optional: Border around the box
+    borderColor: '#eee', // Optional: Light grey border color
+    alignItems: 'center'
+  },
+  text: {
+    marginBottom: 5, // Space between lines of text
+  },
+});
+
 
 export default ShowEmployees;
