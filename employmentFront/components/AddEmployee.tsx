@@ -1,6 +1,5 @@
 import { View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
-import { Picker } from '@react-native-picker/picker';
 import axios from 'axios';
 
 const AddEmployee = () => {
@@ -68,16 +67,11 @@ const AddEmployee = () => {
       />
 
       <Text style={{ marginTop: 10, marginBottom: 5 }}>Gender:</Text>
-      <Picker
-        selectedValue={gender}
-        style={{ height: 40, width: 150, }}
-        onValueChange={(itemValue, itemIndex) =>
-          setGender(itemValue)
-        }>
-        <Picker.Item label="Male" value="male" />
-        <Picker.Item label="Female" value="female" />
-      </Picker>
-
+      <TextInput
+        value={gender}
+        onChangeText={(text) => setGender(text)}
+        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+      />
 
       <Text style={{ marginTop: 10, marginBottom: 5 }}>Hire Date:</Text>
       <TextInput

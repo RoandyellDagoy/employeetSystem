@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView, SafeAreaView } from 'react-native'
 import React from 'react'
 
 const customize = () => {
   return (
-    <View>
-      <Text>customize</Text>
-    </View>
+    <ScrollView style={{backgroundColor: 'dodgerblue'}}>
+
+    </ScrollView>
   )
 }
 

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet , Image, TextInput} from 'react-native'
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
@@ -31,18 +31,25 @@ const ShowEmployees = () => {
         }
     }
   return (
-    <View style={{padding: 10,paddingTop: 35, backgroundColor: '#add8e6'}}>
-      
-      <Text style={{fontSize: 24, fontWeight: 'bold', marginBottom: 10,}}>Employees:</Text>
+    <View style={{padding: 10,paddingTop: 35}}>
+
       {employes.map((employee: employed,index : number) =>(
+
        <View key={index} style={styles.box}>
-         <Text>Id: {employee.id}</Text>
-         <Text>Birthday: {employee.birth_date}</Text>
-         <Text>First Name: {employee.first_name}</Text>
-         <Text>Last Name: {employee.last_name}</Text>
+        <Image source={require('@/assets/images/pusa.jpg')} style={styles.logo} />
+
+        <View style={styles.textContainer}> 
+          <Text>ID: {employee.id}</Text>
+
+          <View style={{flexDirection: 'row'}}>
+          <Text>Name: {employee.first_name}</Text>
+          <Text> {employee.last_name}</Text>
+          </View>
+
          <Text>Position: {employee.position}</Text>
-         <Text>Gender: {employee.gender}</Text>
-         <Text>Hire Date: {employee.hire_date}</Text>
+
+         </View>
+
        </View>
       ))}
     
@@ -50,14 +57,24 @@ const ShowEmployees = () => {
   )
 }
 const styles = StyleSheet.create({
+  logo:{
+    width: 100, 
+    height: 100, 
+    alignSelf: 'flex-start', 
+    marginTop: 0,
+    borderRadius: 50,
+  },
+  textContainer: {
+    flex: 1,
+    marginLeft: 20
+  },
   box: {
-    backgroundColor: '#fff', // White background for the box
-    borderRadius: 5, // Rounded corners
-    padding: 10, // Padding inside the box
-    marginBottom: 10, // Margin below the box
-    borderWidth: 1, // Optional: Border around the box
-    borderColor: '#eee', // Optional: Light grey border color
-    alignItems: 'center'
+    backgroundColor: 'deepskyblue', 
+    borderRadius: 5,
+    padding: 10, 
+    marginBottom: 10, 
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   text: {
     marginBottom: 5, // Space between lines of text
