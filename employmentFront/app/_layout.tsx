@@ -13,7 +13,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
-  axios.defaults.baseURL = "http://192.168.101.11:3000"
+  axios.defaults.baseURL = "http://192.168.43.233:3000"
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });

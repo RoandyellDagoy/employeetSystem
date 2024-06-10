@@ -9,6 +9,7 @@ interface Employee {
   last_name?: string;
   position?: string;
   gender?: string;
+  hire_date?:string;
 
 }
 
@@ -50,6 +51,7 @@ const CallEmployee = () => {
           <Text>Last Name: {employeeData.last_name}</Text>
           <Text>Position: {employeeData.position}</Text>
           <Text>Gender: {employeeData.gender}</Text>
+          <Text>Hire Date: {employeeData.hire_date}</Text>
         </View>
       )}
     </View>

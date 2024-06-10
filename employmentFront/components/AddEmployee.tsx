@@ -1,6 +1,8 @@
 import { View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigation } from "@react-navigation/native";
+import RemoveEmployee from './RemoveEmployee';
 
 const AddEmployee = () => {
   const [birthDate, setBirthDate] = useState('');
@@ -10,6 +12,7 @@ const AddEmployee = () => {
   const [gender, setGender] = useState('');
   const [hireDate, setHireDate] = useState('');
 
+  const navigation = useNavigation();
   const handleSubmit = () => {
     axios.post('/api/makeEmployee', {
       birth_date: birthDate,
@@ -81,22 +84,21 @@ const AddEmployee = () => {
         style={{ height: 40, borderColor: 'gray', borderWidth: 1 , marginBottom: 30}}
       />
 
-<TouchableOpacity
+      <TouchableOpacity
         style={{
-          backgroundColor: '#007AFF', // Example background color
-          borderRadius: 5, // Rounded corners
-          paddingVertical: 10, // Padding inside the button
-          paddingHorizontal: 20, // Horizontal padding
-          alignItems: 'center', // Center content horizontally
-          justifyContent: 'center', // Center content vertically
-          marginVertical: 10, // Margin around the button
+          backgroundColor: '#007AFF', 
+          borderRadius: 5, 
+          paddingVertical: 10, 
+          paddingHorizontal: 20, 
+          alignItems: 'center', 
+          justifyContent: 'center', 
+          marginVertical: 10, 
         }}
-        activeOpacity={0.7} // Opacity during press
+        activeOpacity={0.7} 
         onPress={handleSubmit}
       >
         <Text style={{ color: 'white', fontWeight: 'bold' }}>Submit</Text>
       </TouchableOpacity>
-
     </View>
   );
 };

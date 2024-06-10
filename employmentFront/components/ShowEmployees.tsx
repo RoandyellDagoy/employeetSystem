@@ -19,7 +19,7 @@ const ShowEmployees = () => {
     const [employes, setEmployees] = useState<employed[]>([]);
     useEffect(() =>  {
         fetchData();
-    }, [])
+    }, [employes])
 
 
     const fetchData = async () =>{
@@ -36,7 +36,7 @@ const ShowEmployees = () => {
       {employes.map((employee: employed,index : number) =>(
 
        <View key={index} style={styles.box}>
-        <Image source={require('@/assets/images/pusa.jpg')} style={styles.logo} />
+        <Image source={require('@/assets/images/employeeIcon.png')} style={styles.logo} />
 
         <View style={styles.textContainer}> 
           <Text>ID: {employee.id}</Text>
